@@ -2,10 +2,10 @@
 Repo designed to Django + Django Rest Framework studies.
 
 ## Description
-E-commerce application, where users can buy or sell products
+Car E-commerce application, where users can buy or sell cars
 
 ## Features
-  - Users
+  ### Users
     - Profile Picture
     - Address register
     - Purchase history
@@ -13,18 +13,22 @@ E-commerce application, where users can buy or sell products
     - Sales control
     - Inventory control
     - Rating
-    
-  - Products
-    - Names and Attributes
+ 
+  ### Cars
+    - Name
+    - Year
+    - Brand
     - Category
-    - Pictures
   
-  - Sales
+  ### Sales
     - Descriptions
     - Price
-    - Quantity 
-    - Delivery fee
-    - Type of payment
+    - Pictures 
+    - date_annouced
+    - Mileage
+    
+  ### Category
+    - Name
     
   
 
