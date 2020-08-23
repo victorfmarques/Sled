@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
 class UserManager(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):
-        ''' Creates and saves new user '''
+        """ Creates and saves new user """
 
         if not email:
             raise ValueError('Users must have an email address')
@@ -17,7 +17,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password=None):
-        ''' Creates and saves new super user '''
+        """ Creates and saves new super user """
 
         if not email:
             raise ValueError('Users must have an email address')
@@ -30,7 +30,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    ''' Custom user, used for authentication '''
+    """ Custom user, used for authentication """
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)

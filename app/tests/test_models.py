@@ -3,10 +3,10 @@ from django.contrib.auth import get_user_model
 
 
 class ModelTests(TestCase):
-    ''' Class designed to test models from core app '''
+    """ Class designed to test models from core app """
 
     def test_create_user_with_email_successful(self):
-        ''' Test creating a new user with a email '''
+        """ Test creating a new user with a email """
 
         email = 'admin@admin.com'
         password = 'password123'
@@ -26,7 +26,7 @@ class ModelTests(TestCase):
         self.assertEqual(user.last_name, last_name)
 
     def test_create_user_with_normalized_email(self):
-        ''' Test creating a user with its email normalized '''
+        """ Test creating a user with its email normalized """
 
         email = 'admin@ADMIN.com'
         user = get_user_model().objects.create_user(
@@ -38,7 +38,7 @@ class ModelTests(TestCase):
         self.assertEqual(user.email, email.lower())
 
     def test_new_user_invalid_email(self):
-        ''' Test creating a user with a invalid email '''
+        """ Test creating a user with a invalid email """
 
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user(
@@ -49,7 +49,7 @@ class ModelTests(TestCase):
             )
 
     def test_create_super_user(self):
-        ''' Test creating a superuser '''
+        """ Test creating a superuser """
 
         user = get_user_model().objects.create_superuser(
             email='super@user.com',

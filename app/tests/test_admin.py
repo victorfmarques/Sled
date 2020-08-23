@@ -6,7 +6,7 @@ from rest_framework import status
 
 
 class AdminSiteTest(TestCase):
-    ''' Class designed to test admin site features '''
+    """ Class designed to test admin site features """
 
     def setUp(self):
         self.client = Client()
@@ -23,7 +23,7 @@ class AdminSiteTest(TestCase):
         self.client.force_login(self.admin)
 
     def test_user_listed(self):
-        ''' Test user listing '''
+        """ Test user listing """
 
         url = reverse('admin:core_user_changelist')
         res = self.client.get(url)
@@ -32,7 +32,7 @@ class AdminSiteTest(TestCase):
         self.assertContains(res, self.user.name)
 
     def test_user_edit_page(self):
-        ''' Test edit user page '''
+        """ Test edit user page """
 
         url = reverse('admin:core_user_change', args=[self.user.id])
         res = self.client.get(url)
@@ -40,7 +40,7 @@ class AdminSiteTest(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
 
     def test_user_create_page(self):
-        ''' Test create user page '''
+        """ Test create user page """
 
         url = reverse('admin:core_user_add')
         res = self.client.get(url)
